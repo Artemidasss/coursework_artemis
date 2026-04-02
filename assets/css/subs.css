@@ -1,0 +1,104 @@
+/* assets/css/subs.css */
+
+.subs-hero {
+  position:relative; padding:72px 0 52px; overflow:hidden;
+}
+.subs-glow {
+  position:absolute; top:-120px; right:-80px; width:500px; height:400px;
+  background:var(--accent); filter:blur(110px); opacity:.09; pointer-events:none;
+}
+
+/* ─── Plans ─── */
+.plans {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:22px; margin-bottom:28px;
+}
+.plan {
+  background:var(--surf); border:1px solid var(--bdr); border-radius:var(--rl);
+  padding:34px 26px; position:relative; display:flex; flex-direction:column;
+  transition:var(--tr);
+}
+.plan:hover { border-color:var(--bdr-a); transform:translateY(-6px); box-shadow:0 20px 56px rgba(0,0,0,.32); }
+
+/* Popular */
+.plan-pop {
+  background:linear-gradient(160deg,rgba(229,23,137,.08) 0%,var(--surf) 60%);
+  border-color:var(--bdr-a); transform:scale(1.03);
+  box-shadow:0 14px 44px rgba(229,23,137,.14);
+}
+.plan-pop:hover { transform:scale(1.03) translateY(-6px); }
+
+/* Best (year) */
+.plan-best {
+  background:linear-gradient(160deg,rgba(249,115,22,.07) 0%,rgba(229,23,137,.05) 55%,var(--surf) 100%);
+}
+
+.plan-badge {
+  position:absolute; top:-11px; left:50%; transform:translateX(-50%);
+  background:var(--accent); color:#fff; font-size:10px; font-weight:700;
+  letter-spacing:1.5px; text-transform:uppercase; padding:4px 14px; border-radius:20px;
+  white-space:nowrap;
+}
+.plan-badge-gold { background:linear-gradient(90deg,#f97316,#E51789); }
+
+/* Header */
+.plan-hd { text-align:center; margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid var(--bdr); }
+.plan-name { font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:3px; color:#fff; margin-bottom:14px; }
+.plan-price { display:flex; align-items:flex-start; justify-content:center; gap:3px; }
+.plan-cur { font-size:16px; font-weight:600; color:var(--txt2); margin-top:8px; }
+.plan-amt { font-family:'Bebas Neue',sans-serif; font-size:50px; letter-spacing:2px; color:#fff; line-height:1; }
+.plan-pop .plan-amt { color:var(--accent); }
+.plan-period { font-size:12px; color:var(--txt3); margin-top:7px; }
+.plan-saving {
+  display:inline-block; margin-top:9px; font-size:12px; font-weight:600;
+  color:var(--accent); background:var(--accent-dim); padding:3px 11px; border-radius:20px;
+}
+.plan-saving-gold { background:rgba(249,115,22,.1); color:#f97316; }
+
+/* Features list */
+.plan-feats { list-style:none; flex:1; display:flex; flex-direction:column; gap:12px; margin-bottom:28px; }
+.plan-feats li { font-size:14px; display:flex; align-items:center; gap:9px; }
+.plan-feats li.ok { color:var(--txt); }
+.plan-feats li.no { color:var(--txt3); }
+.plan-feats li.ok::before {
+  content:'✓'; width:18px; height:18px; flex-shrink:0; border-radius:50%;
+  background:rgba(34,197,94,.14); color:#22c55e;
+  display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700;
+}
+.plan-pop .plan-feats li.ok::before { background:var(--accent-dim); color:var(--accent); }
+.plan-feats li.no::before {
+  content:'×'; width:18px; height:18px; flex-shrink:0; border-radius:50%;
+  background:rgba(255,255,255,.03); color:var(--txt3);
+  display:flex; align-items:center; justify-content:center; font-size:10px;
+}
+
+/* Note */
+.plans-note {
+  font-size:13px; color:var(--txt2);
+  background:var(--surf); border:1px solid var(--bdr); border-radius:var(--rs);
+  padding:13px 18px; margin-bottom:72px;
+}
+
+/* ─── FAQ ─── */
+.faq-list { display:flex; flex-direction:column; }
+.faq-item { border-bottom:1px solid var(--bdr); }
+.faq-q {
+  display:flex; justify-content:space-between; align-items:center; width:100%;
+  padding:20px 0; background:none; border:none; color:var(--txt);
+  font-family:'Outfit',sans-serif; font-size:16px; font-weight:600;
+  cursor:pointer; text-align:left; transition:var(--tr); gap:14px;
+}
+.faq-q:hover { color:var(--accent); }
+.faq-ic { font-size:20px; font-weight:300; color:var(--accent); flex-shrink:0; transition:var(--tr); }
+.faq-item.open .faq-ic { transform:rotate(45deg); }
+.faq-a {
+  max-height:0; overflow:hidden; font-size:14px; color:var(--txt2);
+  line-height:1.8; transition:max-height .38s ease, padding .28s ease;
+}
+.faq-item.open .faq-a { max-height:180px; padding-bottom:20px; }
+
+@media(max-width:900px){
+  .plans { grid-template-columns:1fr; max-width:400px; margin:0 auto 28px; }
+  .plan-pop { transform:none; }
+  .plan-pop:hover { transform:translateY(-6px); }
+}

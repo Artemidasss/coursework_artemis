@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Абонементы — ARTEMIS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/subs.css">
+</head>
+<body>
+
+<!-- ─── ШАПКА ─── -->
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-ico">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      ARTE<span style="color:var(--accent)">MIS</span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html"         class="nav-link">Главная</a>
+      <a href="subscriptions.html" class="nav-link active">Абонементы</a>
+      <a href="profile.html"       class="nav-link" data-authed style="display:none">Профиль</a>
+      <span class="nav-auth" id="nav-auth">
+        <a href="#" class="btn btn-sm" id="nav-login-btn" data-guest>Войти</a>
+        <span data-authed class="nav-user-wrap" style="display:none;">
+          <div class="nav-avatar" data-uinit id="avatarBtn"></div>
+          <span class="nav-uname" data-uname></span>
+        </span>
+      </span>
+    </nav>
+    <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="avatar-drop" id="avatarDrop">
+  <a href="profile.html">👤 Мой профиль</a>
+  <button id="logout-btn">← Выйти</button>
+</div>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Главная</a>
+  <a href="subscriptions.html">Абонементы</a>
+  <a href="profile.html" data-authed style="display:none">Профиль</a>
+  <a href="#" id="mob-login-btn" data-guest>Войти</a>
+  <button id="logout-btn-mob" data-authed style="display:none">← Выйти</button>
+</div>
+
+<div class="page-wrap">
+  <!-- Заголовок страницы -->
+  <div class="subs-hero">
+    <div class="subs-glow"></div>
+    <div class="container">
+      <div class="section-label fade-up">Начни сейчас</div>
+      <h1 class="section-title fade-up d1">ВЫБЕРИ СВОЙ<br><em>АБОНЕМЕНТ</em></h1>
+      <p class="section-desc fade-up d2" style="margin-top:14px">
+        Три варианта для любого ритма жизни. Чем дольше — тем выгоднее.
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- Карточки тарифов -->
+    <div class="plans fade-up d2">
+
+      <!-- Месяц -->
+      <div class="plan" data-type="month">
+        <div class="plan-hd">
+          <div class="plan-name">Месяц</div>
+          <div class="plan-price"><span class="plan-cur">₽</span><span class="plan-amt">10 000</span></div>
+          <div class="plan-period">/ 1 месяц</div>
+        </div>
+        <ul class="plan-feats">
+          <li class="ok">Полный доступ к залу</li>
+          <li class="ok">Все тренажёры и зоны</li>
+          <li class="ok">Раздевалка и сауна</li>
+          <li class="ok">Групповые занятия</li>
+          <li class="no">Персональный тренер</li>
+          <li class="no">Нутриционная консультация</li>
+        </ul>
+        <button class="btn btn-outline btn-full plan-btn" data-type="month">Выбрать</button>
+      </div>
+
+      <!-- Полгода (popular) -->
+      <div class="plan plan-pop" data-type="halfyear">
+        <div class="plan-badge">Популярный</div>
+        <div class="plan-hd">
+          <div class="plan-name">Полгода</div>
+          <div class="plan-price"><span class="plan-cur">₽</span><span class="plan-amt">60 000</span></div>
+          <div class="plan-period">/ 6 месяцев</div>
+          <div class="plan-saving">≈ 10 000 ₽/мес</div>
+        </div>
+        <ul class="plan-feats">
+          <li class="ok">Полный доступ к залу</li>
+          <li class="ok">Все тренажёры и зоны</li>
+          <li class="ok">Раздевалка и сауна</li>
+          <li class="ok">Групповые занятия</li>
+          <li class="ok">1 персональная тренировка</li>
+          <li class="no">Нутриционная консультация</li>
+        </ul>
+        <button class="btn btn-full plan-btn" data-type="halfyear">Выбрать</button>
+      </div>
+
+      <!-- Год (best) -->
+      <div class="plan plan-best" data-type="year">
+        <div class="plan-badge plan-badge-gold">Выгодно</div>
+        <div class="plan-hd">
+          <div class="plan-name">Год</div>
+          <div class="plan-price"><span class="plan-cur">₽</span><span class="plan-amt">80 000</span></div>
+          <div class="plan-period">/ 12 месяцев</div>
+          <div class="plan-saving plan-saving-gold">≈ 6 667 ₽/мес · Экономия 40 000 ₽</div>
+        </div>
+        <ul class="plan-feats">
+          <li class="ok">Полный доступ к залу</li>
+          <li class="ok">Все тренажёры и зоны</li>
+          <li class="ok">Раздевалка и сауна</li>
+          <li class="ok">Групповые занятия</li>
+          <li class="ok">4 персональные тренировки</li>
+          <li class="ok">Нутриционная консультация</li>
+        </ul>
+        <button class="btn btn-full plan-btn" style="background:linear-gradient(135deg,#E51789,#f97316)" data-type="year">Выбрать</button>
+      </div>
+    </div>
+
+    <p class="plans-note fade-up">
+      ℹ️ После оформления заявки менеджер свяжется с вами в течение 24 часов для подтверждения и оплаты.
+    </p>
+
+    <!-- FAQ -->
+    <div class="faq fade-up" style="padding-bottom:80px">
+      <h2 class="section-title" style="margin-bottom:36px">ЧАСТО <em>ЗАДАВАЕМЫЕ</em><br>ВОПРОСЫ</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q"><span>Как происходит оплата?</span><span class="faq-ic">+</span></button>
+          <div class="faq-a">После оформления заявки наш менеджер свяжется с вами в течение 24 часов по указанной почте. Оплата производится удобным для вас способом: наличными, картой или переводом.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Можно ли заморозить абонемент?</span><span class="faq-ic">+</span></button>
+          <div class="faq-a">Да, абонемент можно заморозить один раз на срок до 30 дней при наличии уважительной причины (болезнь, командировка). Обратитесь на стойку ресепшн или напишите нам на почту.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Есть ли пробное занятие?</span><span class="faq-ic">+</span></button>
+          <div class="faq-a">Да! Первое пробное занятие совершенно бесплатно. Запишитесь на сайте или позвоните нам по номеру +7 (999) 123-45-67.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Когда начинает действовать абонемент?</span><span class="faq-ic">+</span></button>
+          <div class="faq-a">Абонемент начинает действовать с момента первого посещения или с даты, которую вы согласуете с менеджером при оформлении.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Confirm Modal -->
+<div class="cmodal-overlay" id="confirmModal">
+  <div class="cmodal">
+    <button class="cmodal-close" id="confirmClose">✕</button>
+    <div style="text-align:center;margin-bottom:22px">
+      <div style="width:60px;height:60px;background:var(--accent-dim);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:26px">🎯</div>
+      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;color:#fff" id="confirmTitle"></h3>
+      <p style="font-size:14px;color:var(--txt2);margin-top:7px;line-height:1.6" id="confirmDesc"></p>
+    </div>
+    <div style="background:var(--surf);border-radius:var(--rs);padding:14px;text-align:center;margin-bottom:20px">
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--txt3);margin-bottom:5px">Стоимость</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:38px;letter-spacing:2px;color:#fff" id="confirmPrice"></div>
+    </div>
+    <p style="font-size:12px;color:var(--txt3);text-align:center;margin-bottom:22px;line-height:1.6">
+      После подтверждения менеджер свяжется с вами в течение 24 часов для оплаты.
+    </p>
+    <div style="display:flex;gap:10px">
+      <button class="btn btn-ghost btn-full" id="confirmCancel">Отмена</button>
+      <button class="btn btn-full" id="confirmOk">Подтвердить</button>
+    </div>
+  </div>
+</div>
+
+<!-- Success Modal -->
+<div class="cmodal-overlay" id="successModal">
+  <div class="cmodal" style="text-align:center">
+    <div style="width:68px;height:68px;background:rgba(34,197,94,.13);border:1px solid rgba(34,197,94,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:30px">✓</div>
+    <h3 style="font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:2px;color:#fff;margin-bottom:14px">Заявка принята!</h3>
+    <p id="successMsg" style="font-size:15px;color:var(--txt2);line-height:1.7;margin-bottom:28px"></p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="profile.html" class="btn">Перейти в профиль</a>
+      <button class="btn btn-ghost" id="successClose">Закрыть</button>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="font-size:20px">ARTE<span style="color:var(--accent)">MIS</span></a>
+        <p class="footer-desc">Современный фитнес-центр, где профессионализм встречается с результатом.</p>
+      </div>
+      <div>
+        <div class="footer-col-ttl">Навигация</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="subscriptions.html">Абонементы</a></li>
+          <li><a href="profile.html">Профиль</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-ttl">Контакты</div>
+        <ul class="footer-links">
+          <li><a href="tel:+79991234567">+7 (999) 123-45-67</a></li>
+          <li><a href="mailto:info@artemis-fitness.ru">info@artemis-fitness.ru</a></li>
+          <li><a href="#">ул. Спортивная, 12</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-ttl">Услуги</div>
+        <ul class="footer-links">
+          <li><a href="#">Силовые тренировки</a></li>
+          <li><a href="#">Групповые занятия</a></li>
+          <li><a href="#">Персональный тренер</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2024 ARTEMIS Fitness. Все права защищены.</span></div>
+  </div>
+</footer>
+
+<script src="assets/js/api.js"></script>
+<script src="assets/js/ui.js"></script>
+<script>
+const PLAN_NAMES  = { month:'Месяц', halfyear:'Полгода', year:'Год' };
+const PLAN_PRICES = { month:'10 000 ₽', halfyear:'60 000 ₽', year:'80 000 ₽' };
+const PLAN_DESCS  = {
+  month:    '1 месяц безлимитного доступа в ARTEMIS',
+  halfyear: '6 месяцев безлимитного доступа + 1 персональная тренировка',
+  year:     '12 месяцев безлимитного доступа + 4 тренировки + нутриционная консультация',
+};
+let selected = null;
+
+document.addEventListener('DOMContentLoaded', async () => {
+  AuthModal.init();
+  initNav();
+  await AuthState.check();
+  initFadeUp();
+
+  // Кнопки тарифов
+  document.querySelectorAll('.plan-btn').forEach(btn =>
+    btn.addEventListener('click', () => openConfirm(btn.dataset.type))
+  );
+
+  // Confirm modal
+  document.getElementById('confirmClose').addEventListener('click',  closeConfirm);
+  document.getElementById('confirmCancel').addEventListener('click', closeConfirm);
+  document.getElementById('confirmModal').addEventListener('click', e => { if(e.target===document.getElementById('confirmModal')) closeConfirm(); });
+  document.getElementById('confirmOk').addEventListener('click', doConfirm);
+
+  // Success modal
+  document.getElementById('successClose').addEventListener('click', () => {
+    document.getElementById('successModal').classList.remove('open');
+    document.body.style.overflow = '';
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+});
+
+function openConfirm(type) {
+  if (!AuthState.loggedIn()) {
+    Toast.info('Нужна авторизация', 'Войдите в аккаунт, чтобы оформить абонемент');
+    AuthModal.open('login');
+    window.addEventListener('auth:in', () => setTimeout(() => openConfirm(type), 400), { once: true });
+    return;
+  }
+  selected = type;
+  document.getElementById('confirmTitle').textContent = `Абонемент «${PLAN_NAMES[type]}»`;
+  document.getElementById('confirmDesc').textContent  = PLAN_DESCS[type];
+  document.getElementById('confirmPrice').textContent = PLAN_PRICES[type];
+  document.getElementById('confirmModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeConfirm() {
+  document.getElementById('confirmModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+async function doConfirm() {
+  const btn = document.getElementById('confirmOk');
+  btn.disabled = true; btn.innerHTML = '<span class="spin"></span> Оформляем...';
+  const { ok, data } = await API.subs.purchase(selected);
+  btn.disabled = false; btn.textContent = 'Подтвердить';
+  if (ok && data.success) {
+    closeConfirm();
+    document.getElementById('successMsg').textContent = data.message;
+    document.getElementById('successModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  } else {
+    Toast.error('Ошибка', data.error || 'Что-то пошло не так');
+    if (data.error?.includes('авторизаци')) { closeConfirm(); AuthModal.open('login'); }
+  }
+}
+</script>
+</body>
+</html>

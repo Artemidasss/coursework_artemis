@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Профиль — ARTEMIS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/profile.css">
+</head>
+<body>
+
+<!-- ─── ШАПКА ─── -->
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-ico">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      ARTE<span style="color:var(--accent)">MIS</span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html"         class="nav-link">Главная</a>
+      <a href="subscriptions.html" class="nav-link">Абонементы</a>
+      <a href="profile.html"       class="nav-link active" data-authed style="display:none">Профиль</a>
+      <span class="nav-auth" id="nav-auth">
+        <a href="#" class="btn btn-sm" id="nav-login-btn" data-guest>Войти</a>
+        <span data-authed class="nav-user-wrap" style="display:none;">
+          <div class="nav-avatar" data-uinit id="avatarBtn"></div>
+          <span class="nav-uname" data-uname></span>
+        </span>
+      </span>
+    </nav>
+    <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="avatar-drop" id="avatarDrop">
+  <a href="profile.html">👤 Мой профиль</a>
+  <button id="logout-btn">← Выйти</button>
+</div>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Главная</a>
+  <a href="subscriptions.html">Абонементы</a>
+  <a href="profile.html" data-authed style="display:none">Профиль</a>
+  <a href="#" id="mob-login-btn" data-guest>Войти</a>
+  <button id="logout-btn-mob" data-authed style="display:none">← Выйти</button>
+</div>
+
+<div class="page-wrap">
+
+  <!-- Гость -->
+  <div id="view-guest" class="pg-guest">
+    <div class="pg-glow"></div>
+    <div class="pg-guest-body">
+      <div class="pg-guest-ico">🔐</div>
+      <h1 class="section-title" style="text-align:center">ВОЙДИТЕ В<br><em>АККАУНТ</em></h1>
+      <p style="color:var(--txt2);font-size:16px;text-align:center;max-width:360px;margin:14px 0 32px;line-height:1.75">
+        Для просмотра профиля и управления абонементами необходима авторизация.
+      </p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+        <button class="btn btn-lg" id="guest-login-btn">Войти</button>
+        <button class="btn btn-outline btn-lg" id="guest-reg-btn">Зарегистрироваться</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Авторизован -->
+  <div id="view-auth" style="display:none">
+
+    <!-- Шапка профиля -->
+    <div class="prof-header">
+      <div class="container">
+        <div class="prof-hero">
+          <div class="prof-ava" id="profAva"></div>
+          <div class="prof-info">
+            <div class="section-label">Личный кабинет</div>
+            <h1 class="prof-name" id="profName"></h1>
+            <div class="prof-meta">
+              <span class="prof-meta-i" id="profEmail">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                <span></span>
+              </span>
+              <span class="prof-meta-i" id="profPhone" style="display:none">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span></span>
+              </span>
+              <span class="prof-meta-i" id="profJoined">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span></span>
+              </span>
+            </div>
+          </div>
+          <button class="btn btn-ghost btn-sm" id="prof-logout-btn" style="margin-left:auto;flex-shrink:0">← Выйти</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="padding-bottom:80px">
+
+      <!-- Абонементы -->
+      <div class="prof-sec">
+        <div class="prof-sec-hd">
+          <h2 class="prof-sec-ttl">Мои абонементы</h2>
+          <a href="subscriptions.html" class="btn btn-outline btn-sm">+ Новый абонемент</a>
+        </div>
+
+        <div id="subs-loading" class="subs-loading">
+          <div class="spin" style="width:30px;height:30px;border-width:3px"></div>
+          <span style="color:var(--txt3);font-size:14px">Загружаем данные...</span>
+        </div>
+        <div id="subs-empty" class="subs-empty" style="display:none">
+          <div style="font-size:44px;margin-bottom:14px">📋</div>
+          <h3>Нет активных абонементов</h3>
+          <p>Выберите подходящий план и начните тренироваться уже сегодня!</p>
+          <a href="subscriptions.html" class="btn" style="margin-top:20px">Выбрать абонемент</a>
+        </div>
+        <div id="subs-list" style="display:none"></div>
+      </div>
+
+      <!-- Инфо-карточки -->
+      <div class="prof-sec">
+        <h2 class="prof-sec-ttl" style="margin-bottom:18px">Полезная информация</h2>
+        <div class="info-grid">
+          <div class="info-c"><span class="info-c-ico">🕐</span><div>
+            <div class="info-c-ttl">Часы работы</div>
+            <div class="info-c-body">Пн–Пт: 06:00 – 23:00<br>Сб–Вс: 08:00 – 22:00</div>
+          </div></div>
+          <div class="info-c"><span class="info-c-ico">📍</span><div>
+            <div class="info-c-ttl">Наш адрес</div>
+            <div class="info-c-body">ул. Спортивная, 12<br>5 минут от метро</div>
+          </div></div>
+          <div class="info-c"><span class="info-c-ico">📞</span><div>
+            <div class="info-c-ttl">Связь с нами</div>
+            <div class="info-c-body">+7 (999) 123-45-67<br>info@artemis-fitness.ru</div>
+          </div></div>
+          <div class="info-c"><span class="info-c-ico">❓</span><div>
+            <div class="info-c-ttl">Поддержка</div>
+            <div class="info-c-body">По вопросам заморозки или смены тарифа пишите на почту или звоните нам.</div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="font-size:20px">ARTE<span style="color:var(--accent)">MIS</span></a>
+        <p class="footer-desc">Современный фитнес-центр, где профессионализм встречается с результатом.</p>
+      </div>
+      <div>
+        <div class="footer-col-ttl">Навигация</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="subscriptions.html">Абонементы</a></li>
+          <li><a href="profile.html">Профиль</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-ttl">Контакты</div>
+        <ul class="footer-links">
+          <li><a href="tel:+79991234567">+7 (999) 123-45-67</a></li>
+          <li><a href="mailto:info@artemis-fitness.ru">info@artemis-fitness.ru</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-ttl">Услуги</div>
+        <ul class="footer-links">
+          <li><a href="#">Силовые тренировки</a></li>
+          <li><a href="#">Групповые занятия</a></li>
+          <li><a href="#">Персональный тренер</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2024 ARTEMIS Fitness. Все права защищены.</span></div>
+  </div>
+</footer>
+
+<script src="assets/js/api.js"></script>
+<script src="assets/js/ui.js"></script>
+<script>
+const SUB_ICONS  = { month:'📅', halfyear:'🗓️', year:'🏆' };
+const SUB_COLORS = { month:'#E51789', halfyear:'#E51789', year:'#f97316' };
+
+document.addEventListener('DOMContentLoaded', async () => {
+  AuthModal.init();
+  initNav();
+
+  const { ok, data } = await API.auth.check();
+  const gv = document.getElementById('view-guest');
+  const av = document.getElementById('view-auth');
+
+  if (ok && data.authenticated) {
+    AuthState.set(data.user);
+    gv.style.display = 'none';
+    av.style.display = '';
+    renderProfile(data.user);
+    loadSubs();
+  } else {
+    AuthState.clear();
+    gv.style.display = '';
+    av.style.display = 'none';
+  }
+
+  // guest buttons
+  document.getElementById('guest-login-btn').addEventListener('click', () => AuthModal.open('login'));
+  document.getElementById('guest-reg-btn').addEventListener('click',   () => AuthModal.open('register'));
+  document.getElementById('prof-logout-btn').addEventListener('click', () => AuthState.logout());
+
+  // after login on this page
+  window.addEventListener('auth:in', e => {
+    gv.style.display = 'none'; av.style.display = '';
+    renderProfile(e.detail); loadSubs();
+  });
+  window.addEventListener('auth:out', () => {
+    av.style.display = 'none'; gv.style.display = '';
+  });
+
+  initFadeUp();
+});
+
+function renderProfile(user) {
+  const init = user.name.split(' ').map(p=>p[0]).join('').toUpperCase().slice(0,2);
+  document.getElementById('profAva').textContent  = init;
+  document.getElementById('profName').textContent = user.name;
+  document.getElementById('profEmail').querySelector('span').textContent = user.email;
+  const ph = document.getElementById('profPhone');
+  if (user.phone) { ph.style.display = ''; ph.querySelector('span').textContent = user.phone; }
+  const d = new Date(user.created_at).toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'});
+  document.getElementById('profJoined').querySelector('span').textContent = `В ARTEMIS с ${d}`;
+  // sync nav
+  document.querySelectorAll('[data-uname]').forEach(el => el.textContent = user.name);
+  document.querySelectorAll('[data-uinit]').forEach(el => el.textContent = user.name.charAt(0).toUpperCase());
+  document.querySelectorAll('[data-guest]').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('[data-authed]').forEach(el => el.style.display = '');
+}
+
+async function loadSubs() {
+  const { ok, data } = await API.subs.my();
+  const loading = document.getElementById('subs-loading');
+  const empty   = document.getElementById('subs-empty');
+  const list    = document.getElementById('subs-list');
+  loading.style.display = 'none';
+  if (!ok) { Toast.error('Ошибка', 'Не удалось загрузить абонементы'); return; }
+  const subs = data.subscriptions || [];
+  if (!subs.length) { empty.style.display = ''; return; }
+  list.style.display = '';
+  list.innerHTML = subs.map(s => {
+    const ico   = SUB_ICONS[s.type]  || '🎯';
+    const col   = SUB_COLORS[s.type] || 'var(--accent)';
+    const slbl  = s.status === 'pending' ? 'Ожидает подтверждения' : 'Активен';
+    const scls  = s.status === 'pending' ? 'badge-pending' : 'badge-success';
+    const date  = new Date(s.created_at).toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'});
+    return `
+    <div class="sub-card">
+      <div class="sub-ico" style="background:${col}18;color:${col}">${ico}</div>
+      <div class="sub-body">
+        <div class="sub-top">
+          <h3 class="sub-name">Абонемент «${s.name}»</h3>
+          <span class="badge ${scls}">${slbl}</span>
+        </div>
+        <div class="sub-details">
+          <span>💰 ${s.price.toLocaleString('ru-RU')} ₽</span>
+          <span>⏱ ${s.duration}</span>
+          <span>📅 Оформлен ${date}</span>
+        </div>
+        ${s.status === 'pending' ? `
+        <div class="sub-notice">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+          Менеджер свяжется с вами в течение 24 часов по email для подтверждения и оплаты.
+        </div>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+</script>
+</body>
+</html>

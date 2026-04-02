@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARTEMIS — Фитнес-центр</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+</head>
+<body>
+
+<!-- ─── ШАПКА ─── -->
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-ico">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      ARTE<span style="color:var(--accent)">MIS</span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html"         class="nav-link active">Главная</a>
+      <a href="subscriptions.html" class="nav-link">Абонементы</a>
+      <a href="profile.html"       class="nav-link" data-authed style="display:none">Профиль</a>
+      <span class="nav-auth" id="nav-auth">
+        <a href="#" class="btn btn-sm" id="nav-login-btn" data-guest>Войти</a>
+        <span data-authed class="nav-user-wrap" style="display:none;">
+          <div class="nav-avatar" data-uinit id="avatarBtn"></div>
+          <span class="nav-uname" data-uname></span>
+        </span>
+      </span>
+    </nav>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="avatar-drop" id="avatarDrop">
+  <a href="profile.html">👤 Мой профиль</a>
+  <button id="logout-btn">← Выйти</button>
+</div>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <a href="index.html">Главная</a>
+  <a href="subscriptions.html">Абонементы</a>
+  <a href="profile.html" data-authed style="display:none">Профиль</a>
+  <a href="#" id="mob-login-btn" data-guest>Войти</a>
+  <button id="logout-btn-mob" data-authed style="display:none">← Выйти</button>
+</div>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <div class="section-label fade-up">Фитнес-центр нового поколения</div>
+      <h1 class="hero-title fade-up d1">
+        СТАНЬ<br>
+        <em>СИЛЬНЕЕ</em><br>
+        КАЖДЫЙ ДЕНЬ
+      </h1>
+      <p class="hero-desc fade-up d2">
+        ARTEMIS — место, где рождаются результаты. Профессиональное оборудование,
+        опытные тренеры и атмосфера, которая мотивирует.
+      </p>
+      <div class="hero-btns fade-up d3">
+        <a href="subscriptions.html" class="btn btn-lg">Записаться сейчас</a>
+        <a href="#about" class="btn btn-outline btn-lg">Узнать больше</a>
+      </div>
+      <div class="hero-stats fade-up d4">
+        <div class="hstat"><span class="hstat-n" data-count="1200">0</span><span class="hstat-l">Участников</span></div>
+        <div class="hstat-sep"></div>
+        <div class="hstat"><span class="hstat-n" data-count="15">0</span><span class="hstat-l">Тренеров</span></div>
+        <div class="hstat-sep"></div>
+        <div class="hstat"><span class="hstat-n" data-count="8">0</span><span class="hstat-l">Лет опыта</span></div>
+      </div>
+    </div>
+    <div class="hero-visual fade-up d2" aria-hidden="true">
+      <div class="hv-ring hv-ring1"></div>
+      <div class="hv-ring hv-ring2"></div>
+      <div class="hv-ring hv-ring3"></div>
+      <div class="hv-center">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.2">
+          <path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+          <line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
+        </svg>
+      </div>
+      <div class="hv-float hv-float1">💪 Топ оборудование</div>
+      <div class="hv-float hv-float2">🔥 +350 тренировок/мес</div>
+    </div>
+  </div>
+  <div class="hero-scroll"><span>↓</span></div>
+</section>
+
+<!-- ─── ФИЧИ ─── -->
+<section class="features" id="about">
+  <div class="container">
+    <div class="feat-head">
+      <div>
+        <div class="section-label fade-up">Почему ARTEMIS</div>
+        <h2 class="section-title fade-up d1">ВСЁ ДЛЯ<br><em>ТВОЕГО</em> РЕЗУЛЬТАТА</h2>
+      </div>
+      <p class="section-desc fade-up d2">
+        Мы создали пространство, где каждая деталь работает на ваш прогресс —
+        от тренажёров до температуры воздуха.
+      </p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card fade-up">
+        <div class="feat-ico">💪</div>
+        <h3>Топ оборудование</h3>
+        <p>Тренажёры от ведущих мировых брендов. 200+ единиц всегда в идеальном состоянии.</p>
+      </div>
+      <div class="feat-card fade-up d1">
+        <div class="feat-ico">🏆</div>
+        <h3>Опытные тренеры</h3>
+        <p>15 сертифицированных тренеров с опытом от 5 лет. Персональный подход к каждому.</p>
+      </div>
+      <div class="feat-card fade-up d2">
+        <div class="feat-ico">🧘</div>
+        <h3>Разные направления</h3>
+        <p>Силовой тренинг, кардио, йога, CrossFit, бокс и ещё 12 направлений на выбор.</p>
+      </div>
+      <div class="feat-card fade-up d3">
+        <div class="feat-ico">🚿</div>
+        <h3>Комфорт и чистота</h3>
+        <p>Просторные раздевалки, сауна, бесплатные полотенца и ежечасная уборка.</p>
+      </div>
+      <div class="feat-card fade-up d1">
+        <div class="feat-ico">📱</div>
+        <h3>Онлайн-запись</h3>
+        <p>Записывайтесь на тренировки прямо на сайте в любое удобное время.</p>
+      </div>
+      <div class="feat-card fade-up d2">
+        <div class="feat-ico">🥗</div>
+        <h3>Фитнес-бар</h3>
+        <p>Протеиновые коктейли, спортивное питание и здоровые перекусы прямо в зале.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ИНФО-ПОЛОСА ─── -->
+<div class="info-band">
+  <div class="container info-band-inner">
+    <div class="ibi fade-up">
+      <span class="ibi-ico">🕐</span>
+      <div><div class="ibi-lbl">Часы работы</div>
+        <div class="ibi-val">Пн–Пт: 06:00 – 23:00</div>
+        <div class="ibi-val">Сб–Вс: 08:00 – 22:00</div></div>
+    </div>
+    <div class="ibi-sep"></div>
+    <div class="ibi fade-up d1">
+      <span class="ibi-ico">📍</span>
+      <div><div class="ibi-lbl">Адрес</div>
+        <div class="ibi-val">ул. Спортивная, 12</div>
+        <div class="ibi-val" style="color:var(--txt2);font-size:13px">5 мин от метро</div></div>
+    </div>
+    <div class="ibi-sep"></div>
+    <div class="ibi fade-up d2">
+      <span class="ibi-ico">📞</span>
+      <div><div class="ibi-lbl">Контакты</div>
+        <div class="ibi-val">+7 (999) 123-45-67</div>
+        <div class="ibi-val" style="color:var(--txt2);font-size:13px">info@artemis-fitness.ru</div></div>
+    </div>
+    <div class="ibi-sep"></div>
+    <div class="ibi fade-up d3">
+      <span class="ibi-ico">🌐</span>
+      <div><div class="ibi-lbl">Соцсети</div>
+        <div style="display:flex;gap:10px;margin-top:8px">
+          <a href="#" class="soc-link">VK</a>
+          <a href="#" class="soc-link">TG</a>
+          <a href="#" class="soc-link">IG</a>
+        </div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── КОМАНДА ─── -->
+<section class="team" id="team">
+  <div class="container">
+    <div class="section-label fade-up">Наша команда</div>
+    <h2 class="section-title fade-up d1" style="margin-bottom:8px">ТРЕНЕРЫ <em>ARTEMIS</em></h2>
+    <p class="section-desc fade-up d2" style="margin-bottom:48px">Профессионалы, которые помогут достичь ваших целей быстрее.</p>
+    <div class="team-grid">
+      <div class="team-card fade-up">
+        <div class="team-ava" style="background:linear-gradient(135deg,#E51789,#7c3aed)">АС</div>
+        <h3>Алексей Смирнов</h3>
+        <p class="team-role">Силовой тренинг · Пауэрлифтинг</p>
+        <p class="team-exp">8 лет · Мастер спорта</p>
+        <div class="team-tags"><span>Сила</span><span>Гипертрофия</span></div>
+      </div>
+      <div class="team-card fade-up d1">
+        <div class="team-ava" style="background:linear-gradient(135deg,#E51789,#f97316)">МК</div>
+        <h3>Мария Козлова</h3>
+        <p class="team-role">Йога · Пилатес · Стретчинг</p>
+        <p class="team-exp">6 лет · Инструктор RYT-500</p>
+        <div class="team-tags"><span>Гибкость</span><span>Релаксация</span></div>
+      </div>
+      <div class="team-card fade-up d2">
+        <div class="team-ava" style="background:linear-gradient(135deg,#7c3aed,#06b6d4)">ДВ</div>
+        <h3>Дмитрий Волков</h3>
+        <p class="team-role">CrossFit · Функциональный тренинг</p>
+        <p class="team-exp">10 лет · CrossFit L2</p>
+        <div class="team-tags"><span>Выносливость</span><span>CrossFit</span></div>
+      </div>
+      <div class="team-card fade-up d3">
+        <div class="team-ava" style="background:linear-gradient(135deg,#f97316,#E51789)">АН</div>
+        <h3>Анастасия Новикова</h3>
+        <p class="team-role">Бокс · Единоборства · HIIT</p>
+        <p class="team-exp">7 лет · Кандидат в мастера</p>
+        <div class="team-tags"><span>Бокс</span><span>Кардио</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-box fade-up">
+      <div class="section-label" style="text-align:center">Начни сегодня</div>
+      <h2 class="section-title" style="text-align:center;margin:12px 0">ПЕРВЫЙ ШАГ К<br><em>ЛУЧШЕЙ ВЕРСИИ</em> СЕБЯ</h2>
+      <p style="text-align:center;color:var(--txt2);max-width:460px;margin:0 auto 32px;line-height:1.75">
+        Выберите подходящий абонемент и присоединитесь к тысячам людей,
+        которые уже изменили свою жизнь в ARTEMIS.
+      </p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <a href="subscriptions.html" class="btn btn-lg">Выбрать абонемент</a>
+        <a href="#" class="btn btn-outline btn-lg" id="cta-login-btn">Войти в аккаунт</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ПОДВАЛ ─── -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="font-size:20px">
+          ARTE<span style="color:var(--accent)">MIS</span>
+        </a>
+        <p class="footer-desc">Современный фитнес-центр, где профессионализм встречается с результатом. Твоя трансформация начинается здесь.</p>
+      </div>
+      <div>
+        <div class="footer-col-ttl">Навигация</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="subscriptions.html">Абонементы</a></li>
+          <li><a href="profile.html">Профиль</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-ttl">Услуги</div>
+        <ul class="footer-links">
+          <li><a href="#">Силовые тренировки</a></li>
+          <li><a href="#">Групповые занятия</a></li>
+          <li><a href="#">Персональный тренер</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-ttl">Контакты</div>
+        <ul class="footer-links">
+          <li><a href="tel:+79991234567">+7 (999) 123-45-67</a></li>
+          <li><a href="mailto:info@artemis-fitness.ru">info@artemis-fitness.ru</a></li>
+          <li><a href="#">ул. Спортивная, 12</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 ARTEMIS Fitness. Все права защищены.</span>
+      <span>Сделано с ❤️ и 💪</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/api.js"></script>
+<script src="assets/js/ui.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  AuthModal.init();
+  initNav();
+  await AuthState.check();
+  initFadeUp();
+
+  // CTA login
+  document.getElementById('cta-login-btn')?.addEventListener('click', e => {
+    e.preventDefault();
+    if (AuthState.loggedIn()) location.href = 'profile.html';
+    else AuthModal.open('login');
+  });
+
+  // После входа обновляем видимость nav
+  window.addEventListener('auth:in', () => initFadeUp());
+
+  // Счётчики
+  const counters = document.querySelectorAll('[data-count]');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target, target = +el.dataset.count;
+      let cur = 0;
+      const step = target / 60;
+      const t = setInterval(() => {
+        cur = Math.min(cur + step, target);
+        el.textContent = Math.floor(cur) + (target >= 100 ? '+' : '');
+        if (cur >= target) clearInterval(t);
+      }, 16);
+      io.unobserve(el);
+    });
+  }, { threshold: .5 });
+  counters.forEach(c => io.observe(c));
+});
+</script>
+</body>
+</html>
