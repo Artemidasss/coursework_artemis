@@ -1,0 +1,52 @@
+[
+    {
+        "id": "s_69adf69e5cca79.58355415",
+        "user_id": "u_69adf69bbf3a36.55789051",
+        "type": "year",
+        "name": "Год",
+        "price": 80000,
+        "duration": "12 месяцев",
+        "status": "pending",
+        "created_at": "2026-03-08 23:22:22"
+    },
+    {
+        "id": "s_69adf9f0126a17.43209597",
+        "user_id": "u_69adf8a6a56cf9.62635422",
+        "type": "halfyear",
+        "name": "Полгода",
+        "price": 60000,
+        "duration": "6 месяцев",
+        "status": "pending",
+        "created_at": "2026-03-08 23:36:32"
+    },
+    {
+        "id": "s_69cd468f75a235.27847140",
+        "user_id": "u_69cd468d0a47a9.17227705",
+        "type": "halfyear",
+        "name": "Полгода",
+        "price": 60000,
+        "duration": "6 месяцев",
+        "status": "pending",
+        "created_at": "2026-04-01 18:23:43"
+    },
+    {
+        "id": "s_69cd604918f4e8.34929404",
+        "user_id": "u_69cd5efd8651d2.73433860",
+        "type": "halfyear",
+        "name": "Полгода",
+        "price": 60000,
+        "duration": "6 месяцев",
+        "status": "pending",
+        "created_at": "2026-04-01 20:13:29"
+    },
+    {
+        "id": "s_69cd605393a682.19936957",
+        "user_id": "u_69cd5efd8651d2.73433860",
+        "type": "year",
+        "name": "Год",
+        "price": 80000,
+        "duration": "12 месяцев",
+        "status": "pending",
+        "created_at": "2026-04-01 20:13:39"
+    }
+]

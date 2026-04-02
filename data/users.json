@@ -1,0 +1,42 @@
+[
+    {
+        "id": "u_69adf69bbf3a36.55789051",
+        "name": "Олег Малышев",
+        "email": "qvoste@gmail.com",
+        "phone": "+7 995 175-13-28",
+        "password": "$2y$10$Tq1EzkzPvFIjMZEmSd884ugwNEEQV9svs.BADCIfCntpyV1yD0I.G",
+        "created_at": "2026-03-08 23:22:19"
+    },
+    {
+        "id": "u_69adf8a6a56cf9.62635422",
+        "name": "Ревягин Артём",
+        "email": "artemis@gmail.com",
+        "phone": "+7 995 175-13-28",
+        "password": "$2y$10$eLKQiv2aAW4jJ4vg5acMHO4qU\/dXCW\/TDhZjBTHX4uOQu5jzvPoSG",
+        "created_at": "2026-03-08 23:31:02"
+    },
+    {
+        "id": "u_69cd468d0a47a9.17227705",
+        "name": "Олег Малышев",
+        "email": "qoste@gmail.com",
+        "phone": "+7 995 175-13-28",
+        "password": "$2y$10$tPC2S2jOb.04Vd97j5V8Se0rKJFWg4KeRm\/i9S8VhSbmviL2NwDXS",
+        "created_at": "2026-04-01 18:23:41"
+    },
+    {
+        "id": "u_69cd5efd8651d2.73433860",
+        "name": "Артём",
+        "email": "oste@gmail.com",
+        "phone": "+7 995 175-13-28",
+        "password": "$2y$10$6jdZPb0wH448Tw85JudS\/.ibNAsGzw3QEzcJYkfqmPFnT4mcThVP.",
+        "created_at": "2026-04-01 20:07:57"
+    },
+    {
+        "id": "u_69cd60745b5e75.75822972",
+        "name": "Ревягин Артём",
+        "email": "ste@gmail.com",
+        "phone": "+7 995 175-13-28",
+        "password": "$2y$10$Hu\/3Cc6OUkZSklp0Qysi1.2YLSMeVeM1iXBEnoPQtxA2uyeYib8W.",
+        "created_at": "2026-04-01 20:14:12"
+    }
+]
